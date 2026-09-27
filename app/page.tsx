@@ -1,0 +1,3 @@
+'use client';
+import {useEffect,useState} from 'react'; import {LOAD_KEY,SAVE_KEY} from '@/lib/profile';
+export default function Page(){const [name,setName]=useState(''); const [saved,setSaved]=useState(''); useEffect(()=>{setName(localStorage.getItem(LOAD_KEY)||'Cyde')},[]); const save=()=>{localStorage.setItem(SAVE_KEY,name);setSaved('Saved. Now refresh the page.')}; return <main><h1>Profile Demo</h1><div className="card"><label>Name</label><input className="input" value={name} onChange={e=>setName(e.target.value)}/><br/><br/><button className="btn" onClick={save}>Save Profile</button><p>{saved}</p><p className="muted">Bug: refresh after save and the new name disappears.</p></div></main>}

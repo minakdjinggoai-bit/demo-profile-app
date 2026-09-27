@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest'; import {LOAD_KEY,SAVE_KEY} from '../lib/profile'; describe('profile persistence',()=>{it('uses same key for load and save',()=>{expect(SAVE_KEY).toBe(LOAD_KEY)})});
